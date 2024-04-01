@@ -1,0 +1,7 @@
+CREATE PROCEDURE UpdateStudentMarks (in p_stud_id int)
+BEGIN
+    declare total_score decimal(12,3);
+    select sum(sub_score) into stud_marks from stud_sub_score where stud_id=p_stud_id;
+    set stud_marks=(total_score/4)*100;
+
+END
