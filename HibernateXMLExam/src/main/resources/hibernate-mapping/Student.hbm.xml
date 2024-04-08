@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.example.entity.Student" table="student">
+        <id name="studentId" column="student_id">
+            <generator class="increment"/>
+        </id>
+
+        <property name="studentName" column="stud_name"/>
+        <property name="rollNumber" column="stud_roll_number"/>
+<!--Many students can have one subject so many-to-one relation between student and subject-->
+        <many-to-one name="subject"
+                     class="org.example.entity.Subject">
+            <column name="subject_id"/>
+        </many-to-one>
+        <!--//Many-to-one relation for student and teacher..Multiple student can have one teacher-->
+        <many-to-one name="teacher" class="org.example.entity.Teacher">
+            <column name="student_id"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

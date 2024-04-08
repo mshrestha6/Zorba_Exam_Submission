@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.example.entity.Teacher" table="teacher">
+        <id name="teacherId" column="teacher_id">
+            <generator class="increment"/>
+        </id>
+
+        <property name="teacherName" column="teacher_name" type="java.lang.String" length="255"/>
+        <property name="qualification" column="teacher_qualification" type="java.lang.String" length="255"/>
+        <property name="teacherExperience" column="experience_of_teaching" type="int" length="255"/>
+
+
+    </class>
+</hibernate-mapping>
