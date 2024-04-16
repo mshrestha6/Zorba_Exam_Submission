@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Connection Pooling size -->
+        <property name="connection.pool_size">5</property>
+
+        <!-- MySql Driver class name -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!--JDBC Url to connect to Database-->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/shoppingcart</property>
+
+        <!-- Username to connect with mysql-->
+        <property name="hibernate.connection.username">root</property>
+
+        <!-- Password to connect with mysql -->
+        <property name="hibernate.connection.password">Tashidhundup1!</property>
+
+        <!--Helps to convert from ORM/HQL to corresponding SQL-->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!--Helps to get the SQL query that finally getting executed from hibernate to Database.
+        That Query will be display / visible to the console-->
+        <property name="show_sql">true</property>
+
+        <!-- Create : Every time we restart the server, going to drop all the table in the schema and create new table
+            Update : Create table once in the Schema and will keep updating even if we restart the server. -->
+        <property name="hbm2ddl.auto">create</property>
+
+        <!-- Set current session context -->
+        <property name="current_session_context_class">thread</property>
+
+
+    </session-factory>
+</hibernate-configuration>
