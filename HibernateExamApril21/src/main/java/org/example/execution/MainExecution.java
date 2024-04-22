@@ -24,7 +24,10 @@ public class MainExecution {
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
         System.out.println("binary format data: " + fileInputStream);
 
-        //Create Hibernate Session Factory
+        //(for (Row row1: employeeSheet) {
+        //                            if (row.getRowNum() == 0) {
+        //                                continue;
+        //                            }Create Hibernate Session Factory
         SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = null;
@@ -82,7 +85,7 @@ public class MainExecution {
 
                         XSSFSheet skillSheet= xssfWorkbook.getSheet("Skill");
                         session.beginTransaction();
-                        (for (Row row1: employeeSheet) {
+                        for (Row row1: employeeSheet) {
                             if (row.getRowNum() == 0) {
                                 continue;
                             }
@@ -95,19 +98,18 @@ public class MainExecution {
                     session.getTransaction().commit();
                 }
             }
-
             }
-        catch(Exception e){
-        e.printStackTrace();
-        transaction.rollback();
 
-    }finally{
+        }catch(Exception e){
+                e.printStackTrace();
+                transaction.rollback();
+
+            }finally{
             if (session != null) {
-        session.close();
-                }
-}
-    }
-}
-}
+                session.close();
+            }
+
+        }
+}}
 
 
