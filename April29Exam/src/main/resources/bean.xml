@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-init-method="init" default-destroy-method="destroy">
+
+
+<bean name="OneBHKFlat" class="org.example.Property.RentOfFlat.RentOfOneBHKFlat"/>
+   <bean name="TwoBHKFlat" class="org.example.Property.RentOfFlat.RentOfTwoBHKFlat">
+    <property name="hasBalcony" value="true"/>
+   </bean>
+    <bean name="ThreeBHKFlat" class="org.example.Property.RentOfFlat.RentOfThreeBHKFlat">
+        <property name="hasBalcony" value="true"/>
+    </bean>
+
+    <bean name="SelfOneBHKFlat" class="org.example.Property.SelfOwnedFlat.SelfOwnedOneBHKFlat"/>
+    <bean name="SelfTwoBHKFlat" class="org.example.Property.SelfOwnedFlat.SelfOwnedTwoBHKFlat"/>
+    <bean name="SelfThreeBHKFlat" class="org.example.Property.SelfOwnedFlat.SelfOwnedThreeBHKFlat"/>
+
+
+</beans>
