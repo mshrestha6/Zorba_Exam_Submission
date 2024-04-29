@@ -38,6 +38,6 @@ public class SelfOwnedOneBHKFlat {
         return length * breadth * height;
     }
     public float finalPriceOfFlat(){
-        return 1000*calculatePlot();
+        return 10000*calculatePlot();
     }
 }

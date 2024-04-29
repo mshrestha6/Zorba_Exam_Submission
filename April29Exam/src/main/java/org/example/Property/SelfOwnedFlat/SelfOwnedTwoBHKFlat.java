@@ -39,6 +39,6 @@ public class SelfOwnedTwoBHKFlat {
         return length * breadth * height;
     }
     public float finalPriceOfFlat(){
-        return 3000*calculatePlot();
+        return 30000*calculatePlot();
     }
 }
