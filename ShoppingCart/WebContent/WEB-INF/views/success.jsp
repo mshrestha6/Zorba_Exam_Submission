@@ -14,6 +14,8 @@
 <h1>Data Saved Successfully..YAY!!!!</h1>
 <h3>$(response)</h3>
 <a href="http://localhost:8080/ShoppingCart-war/item/fetchItem">Items listed</a>
+<a href="http://localhost:8080/ShoppingCart-war/customer/fetchCustomer">Customer List</a>
+<a href="http://localhost:8080/ShoppingCart-war/vendor/fetchVendor">Vendor List</a>
 
 </body>
 </html>
