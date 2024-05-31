@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping(value="/customer")
 
@@ -18,7 +20,7 @@ public class CustomerController {
 @Autowired
     private CustomerService customerService;
 
-@GetMapping("/")
+@GetMapping("/customerPage")
     public String customerPage() {
     return "CustomerRegistration";
 }
@@ -28,8 +30,14 @@ public class CustomerController {
     if(status.equalsIgnoreCase("validationFailed")){
         return "fail";
     }
-    model.addAttribute("status",status);
+    model.addAttribute("customer",status);
     return "success";
+}
+@GetMapping("/fetchCustomer")
+    public String fetchCustomer(Model model) {
+    List<CustomerModel> customerModelList=this.customerService.getAllCustomers();
+    model.addAttribute("customerModelList",customerModelList);
+    return "CustomerViewpage";
 }
 
 }

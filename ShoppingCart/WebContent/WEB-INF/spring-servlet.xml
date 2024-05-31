@@ -43,7 +43,7 @@
             <beans:property name="hibernateProperties">
                 <beans:props>
                     <beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</beans:prop>
-                    <beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>
+                    <beans:prop key="hibernate.hbm2ddl.auto">create</beans:prop>
                     <beans:prop key="hibernate.show_sql">true</beans:prop>
                     <beans:prop key="hibernate.connection.pool_size">10</beans:prop>
                 </beans:props>
@@ -55,6 +55,10 @@
             <beans:constructor-arg name="sessionFactory" ref="hibernate4SessionFactory"/>
         </beans:bean>
     <beans:bean name="itemInfoDao" class="org.example.dao.ItemInfoDAOImpl">
+        <beans:property name="sessionFactory" ref="hibernate4SessionFactory"/>
+        <beans:constructor-arg name="sessionFactory" ref="hibernate4SessionFactory"/>
+    </beans:bean>
+    <beans:bean name="vendorDao" class="org.example.dao.VendorDAOImpl">
         <beans:property name="sessionFactory" ref="hibernate4SessionFactory"/>
         <beans:constructor-arg name="sessionFactory" ref="hibernate4SessionFactory"/>
     </beans:bean>

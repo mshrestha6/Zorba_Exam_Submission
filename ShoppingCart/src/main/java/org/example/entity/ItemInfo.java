@@ -23,8 +23,8 @@ public class ItemInfo {
     @Column(name="item_price")
     private Double itemPrice;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "item_type_id")
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "item_type_id", nullable = false)
     private ItemType itemType;
 
 }

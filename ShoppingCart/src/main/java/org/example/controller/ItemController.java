@@ -11,28 +11,36 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
+
 @Controller
 @RequestMapping(value="/item")
 
-public class ItemController {
+public class ItemController<List> {
     @Autowired
     private ItemService itemService;
 
-    @GetMapping("/items")
-    public String items(Model model) {
-       model.addAttribute("itemInfo", new ItemInfo());
-      model.addAttribute("itemType", itemService);
+    @GetMapping("/load")
+    public String loadForm(Model model) {
         return "itemRegistration";
     }
 
-    @PostMapping("/items")
+    @PostMapping("/additem")
     public String addItem(@ModelAttribute ItemModel itemModel, Model model) {
         String status = this.itemService.saveItem(itemModel);
         if (status.equalsIgnoreCase("validationFailed")) {
             return "fail";
         }
-        model.addAttribute("response", status);
+        java.util.List<ItemModel> itemModelList=this.itemService.getAllItemInfo();
+        model.addAttribute("itemInfo", itemModelList);
         return "success";
 
+    }
+    @GetMapping("/fetchItem")
+    public String fetchItem(Model model) {
+        java.util.List<ItemModel> itemModelList=this.itemService.getAllItemInfo();
+        model.addAttribute("itemInfo", itemModelList);
+        return "itemViewpage";
     }
 }

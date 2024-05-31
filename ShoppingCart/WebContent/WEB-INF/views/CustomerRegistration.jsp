@@ -14,7 +14,7 @@
 </head>
 <body>
 <h2>Customer Registration Form</h2>
-<form action="/register" method="post">
+<form action="register" method="post">
     <div>
     <label for="customerName"> Name: </label>
         <input id="customerName" name="customerName" type="text"/>

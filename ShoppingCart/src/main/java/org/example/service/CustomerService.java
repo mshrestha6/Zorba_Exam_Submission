@@ -5,8 +5,12 @@ import org.example.entity.Customer;
 import org.example.model.CustomerModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 
 public class CustomerService {
@@ -21,27 +25,33 @@ public class CustomerService {
             customerModel.getCustomerUserName() == null || customerModel.getCustomerPassword() == null) {
       return "Please validate all the information should be correct..";
     }
-    if(!customerModel.getCustomerEmail().contains("@")){
+   else if (!customerModel.getCustomerEmail().contains("@")){
       return "Please enter a valid email address.";
-
     }
-    if(customerModel.getMobileNo().length()!=10) {
+    else if(customerModel.getMobileNo().length()!=10) {
       return "Please provide valid mobile no.";
     }
-    if(customerModel.getCustomerPassword().length()<6) {
+    else if(customerModel.getCustomerPassword().length()<6) {
       return "Please provide valid password.";
+    }else{
+      Customer customer = new Customer();
+
+
+
+      return null;
+
     }
-
-    customerModel.setCustomerName(customerModel.getCustomerName());
-    customerModel.setCustomerEmail(customerModel.getCustomerEmail());
-    customerModel.setMobileNo(customerModel.getMobileNo());
-    customerModel.setCustomerAddress(customerModel.getCustomerAddress());
-    customerModel.setCustomerUserName(customerModel.getCustomerUserName());
-    customerModel.setCustomerPassword(customerModel.getCustomerPassword());
-
-    String status=this.customerDAO.registerCustomer(customerModel);
-    return status;
-
   }
+
+  public List<CustomerModel> getAllCustomers() {
+    List<Customer> customerList=this.customerDAO.getCustomers();
+    List<CustomerModel> customerModelList=new ArrayList<CustomerModel>();
+    for (Customer customer : customerList) {
+      CustomerModel customerModel=new CustomerModel();
+     // customerModel.setCustomerUserName(customer.getCustName());
+    }
+    return customerModelList;
+  }
+
 
 }
