@@ -17,22 +17,22 @@ public class Customer {
     private Integer customerId;
 
   @Column(name="customer_name")
-    private String customerName;
+  private String customerName;
 
   @Column (name="mobile_no")
-    private String mobileNo;
+  private String mobileNo;
 
   @Column(name="customer_email")
   private String customerEmail;
 
-@Column(name="Customer_address")
-    private String customerAddress;
+ @Column(name="Customer_address")
+ private String customerAddress;
 
-@Column(name="username")
-    private String customerUserName;
+  @Column(name="username")
+  private String customerUserName;
 
-@Column(name="password")
-    private String customerPassword;
+  @Column(name="password")
+  private String customerPassword;
 
 
     }

@@ -57,7 +57,6 @@ public class VendorService {
             vendorModel.setVendorPassword(vendor.getVendorPassword());
             vendorModel.setVendorRegistration(vendor.getVendorRegistration());
             vendorModelList.add(vendorModel);
-
         }
         return vendorModelList;
     }

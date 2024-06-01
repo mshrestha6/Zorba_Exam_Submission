@@ -19,8 +19,6 @@ public class ItemInfoDAOImpl implements ItemInfoDAO {
         this.sessionFactory = sessionFactory;
     }
 
-
-
     @Override
     public String saveItem(ItemInfo itemInfo) {
         Session session= this.sessionFactory.openSession();

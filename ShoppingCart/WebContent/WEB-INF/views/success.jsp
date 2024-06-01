@@ -13,7 +13,7 @@
 <body>
 <h1>Data Saved Successfully..YAY!!!!</h1>
 <h3>$(response)</h3>
-<a href="localhost:8080/ShoppingCart_war/item/fetchItem">Items listed</a>
+<a href="localhost:8080/ShoppingCart_war/item/fetchItem">Items list</a>
 <a href="localhost:8080/ShoppingCart_war/customer/fetchCustomer">Customer List</a>
 <a href="localhost:8080/ShoppingCart_war/vendor/fetchVendor">Vendor List</a>
 

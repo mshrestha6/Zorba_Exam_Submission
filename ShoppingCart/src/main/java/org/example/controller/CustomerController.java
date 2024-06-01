@@ -29,9 +29,10 @@ public class CustomerController {
     String status=this.customerService.registerCustomerData(customerModel);
     if(status.equalsIgnoreCase("validationFailed")){
         return "fail";
+    }else {
+        model.addAttribute("customer", status);
+        return "success";
     }
-    model.addAttribute("customer",status);
-    return "success";
 }
 @GetMapping("/fetchCustomer")
     public String fetchCustomer(Model model) {
