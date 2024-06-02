@@ -9,7 +9,7 @@ import java.util.List;
 public interface CustomerDAO {
 String registerCustomer(Customer customer);
 
-List<Customer> getCustomers();
+List<Customer> fetchCustomer();
 
 
 }

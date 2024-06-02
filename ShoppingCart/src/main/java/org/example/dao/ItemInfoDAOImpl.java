@@ -16,6 +16,7 @@ public class ItemInfoDAOImpl implements ItemInfoDAO {
 
 
     public ItemInfoDAOImpl(SessionFactory sessionFactory) {
+
         this.sessionFactory = sessionFactory;
     }
 

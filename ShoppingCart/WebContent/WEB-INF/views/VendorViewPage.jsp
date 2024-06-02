@@ -24,7 +24,7 @@
     <th>Registration</th>
     </thead>
     <tbody>
-    <c:forEach var="v" items="${vendors}">
+    <c:forEach var="vendor" items="${vendors}">
     <tr>
         <td><c:out value="${vendor.vendorName}"/> </td>
         <td><c:out value="${vendor.vendorEmail}"/> </td>

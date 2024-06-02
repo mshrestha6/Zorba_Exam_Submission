@@ -4,6 +4,7 @@ import org.example.entity.Customer;
 import org.example.model.CustomerModel;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -18,7 +19,8 @@ public class CustomerDAOImpl implements CustomerDAO {
     public CustomerDAOImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-    @Override
+
+
     public String registerCustomer(Customer customer) {
         Session session= this.sessionFactory.openSession();
         try{
@@ -36,7 +38,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public List<Customer> getCustomers() {
+    public List<Customer> fetchCustomer() {
         List<Customer> customers = new ArrayList<Customer>();
         String hql = "FROM Customer";
         Session session = sessionFactory.openSession();
@@ -53,7 +55,6 @@ public class CustomerDAOImpl implements CustomerDAO {
         }
        return customers;
     }
-
 
 
 

@@ -26,11 +26,11 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="c" items="${customers}">
+    <c:forEach var="c" items="${customerModelList}">
         <tr>
             <td><c:out value="${c.customerName}"/> </td>
             <td><c:out value="${c.customerEmail}"/> </td>
-            <td><c:out value="${c.MobileNo}"/> </td>
+            <td><c:out value="${c.mobileNo}"/> </td>
             <td><c:out value="${c.customerAddress}"/> </td>
             <td><c:out value="${c.customerUserName}"/> </td>
             <td><c:out value="${c.customerPassword}"/> </td>

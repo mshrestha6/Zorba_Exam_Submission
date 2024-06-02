@@ -5,6 +5,7 @@ import org.example.entity.Vendor;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -14,14 +15,14 @@ import java.util.List;
 
 public class VendorDAOImpl implements VendorDAO {
     private SessionFactory sessionFactory;
-    public void setSessionFactory(SessionFactory sessionFactory) {
+
+    public VendorDAOImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
-
     @Override
     public String registerVendor(Vendor vendor) {
-        Session session = sessionFactory.openSession();
+        Session session = this.sessionFactory.openSession();
         try{
             session.beginTransaction();
             session.save(vendor);

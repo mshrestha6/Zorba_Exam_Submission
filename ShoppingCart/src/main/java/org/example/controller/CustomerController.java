@@ -30,15 +30,15 @@ public class CustomerController {
     if(status.equalsIgnoreCase("validationFailed")){
         return "fail";
     }else {
-        model.addAttribute("customer", status);
+        model.addAttribute("response", status);
         return "success";
     }
 }
 @GetMapping("/fetchCustomer")
     public String fetchCustomer(Model model) {
-    List<CustomerModel> customerModelList=this.customerService.getAllCustomers();
+    List<CustomerModel> customerModelList=this.customerService.fetchCustomer();
     model.addAttribute("customerModelList",customerModelList);
-    return "CustomerViewpage";
+    return "CustomerViewPage";
 }
 
 }

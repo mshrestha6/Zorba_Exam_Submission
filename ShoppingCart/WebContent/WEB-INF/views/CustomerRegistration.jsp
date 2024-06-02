@@ -20,6 +20,9 @@
         <input id="customerName" name="customerName" type="text"/>
     </div>
     <div>
+        <label for="customerEmail">Email</label></div>
+    <input id="customerEmail" name="customerEmail" type="text"/>
+    <div>
         <label for="mobileNo">Mobile Number</label>
         <input id="mobileNo" name="mobileNo" type="text"/>
     </div>
